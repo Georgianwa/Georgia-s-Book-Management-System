@@ -1,1 +1,1 @@
-### Georgia's Book Managent System
+### Georgia's Book Management System
