@@ -33,10 +33,10 @@ const userSChema = new mongoose.Schema({
         type: String, 
         required: true,
         validate: {
-            validator: function(w) {
-                return w.length>=5;
+            validator: function(v) {
+                return v.length>=5;
             },
-            message: props => `${props.value} is too short,\nusername must be at least 5 characters long`
+            message: (props) => `${props.value} is too short,\nusername must be at least 5 characters long`
         },
         trim: true
     },

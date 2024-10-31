@@ -18,12 +18,12 @@ app.get("/", (req, res) => {
     res.render("index.ejs", {title: "Home Page"});
 });
 
+
 app.get("/test", (req, res) => {
     res.send("Testing the routes");
 });
 app.use("/api/users", userRoutes);
 app.use("/api/books", bookRoutes);
-
 
 
 
