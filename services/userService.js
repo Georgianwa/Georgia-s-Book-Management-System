@@ -63,10 +63,10 @@ exports.loginUser = async (req, res) => {
         const { email, password } = req.body;
 
         const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: "Invalid username or email"});
+        if (!user) return res.status(400).json({ message: "Invalid username/email or password"});
 
         const isMatch = await argon2.compare(password, user.password);
-        if (!user) return res.status(400).json({ message: "Your password is incorrect"});
+        if (!user) return res.status(400).json({ message: "Invalid username/email or password" });
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "90s" });
         res.json({ token });
@@ -100,7 +100,7 @@ exports.updateUser = async (req, res) =>{
             updatedFields.password = hashedPassword;
         }
         const user = await User.findByIdAndUpdate(req.user.id, updatedFields, { new: true }).select("-password");
-        if (!user) return res.staus(404).json({ message: "User not found" });
+        if (!user) return res.status(404).json({ message: "User not found" });
 
         res.json(user);
     } catch (err) {

@@ -47,3 +47,5 @@ Create a `.env` file for storing sensitive info like your uri and import needed 
 ### 5. Integrate `connectDB` in `index.js`
 Import `connectDB` into your main app file to establish a connection when the server is run.
 
+### 6. IP address
+Ensure your current IP address is on your Atlas Cluster's IP whitelist: https://mongo
