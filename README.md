@@ -1,5 +1,8 @@
 # Book Managemnet System API
 
+## Project Description
+A RESTful API for a book management system to handle basic CRUD operations for users and books, done as a project for the Sycamore NG mentorship program.
+
 ## Project Setup
 
 1. Clone the repository:
